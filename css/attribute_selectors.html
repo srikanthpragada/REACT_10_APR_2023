@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Attribute selector */
+        a[target] {
+            font-size:20pt;
+        }
+
+        h1[title *= 'Head'] {
+            color:red;
+        }
+
+        a[href $= ".com"] {
+            color:black;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <h1 title="Heading">First Heading</h1>
+    <a target = "_blank" href="google.com" >Google</a>
+    <br>
+    <a href="khanacademy.org" target="_blank">Khan Academy</a>
+    <div class="bright">This is bright div</div>
+</body>
+
+</html>
