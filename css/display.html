@@ -1,19 +1,25 @@
 <html>
 <style>
-    div {
+    div  {
+        background-color:yellow;
+    }
+    div.first {
         background-color: lightgray;
-        display: inline-block;
-        margin:10px;
-        padding: 10px;
+        display: inline;
+        border: 2px solid blue;
     }
 
     button.btn {
-        display: block;
         margin-top:10px;
+        border-color:red;
     }
-    img {
-        display: none;
+
+    li {
+        display : inline-block;
+        background-color: red;
+        width:100px;
     }
+  
 </style>
 
 <body>
@@ -22,10 +28,12 @@
     <br>
     <button class="btn">First</button>
     <button class="btn b2">Second</button>
-
-    <img src=""  alt="First image"/>
-    <img src=""  alt="Second image"/>
     <div>Last Line</div>
+    <ul>
+        <li>Python</li>
+        <li>Java</li>
+        <li>JavaScript</li>
+    </ul>
 </body>
 
 </html>

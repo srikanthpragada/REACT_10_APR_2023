@@ -2,13 +2,17 @@
 
 <head>
     <style>
-        /* child selector */
-        div > p {
+        /* Descendant selector */
+        div  p {
             color: blue;
         }
+        /* Child selector */
+        span > p  {
+            color : rgb(64, 154, 64);
+        }
         /*Adjacent sibiling selector */
-        span + p  {
-            color : green;
+        span + h2 {
+            color : red;
         }
     </style>
 </head>
@@ -18,12 +22,13 @@
         <span>
             <p>This is DIV->Span->P</p>
         </span>
-        <p>
-            DIV -> P
-        </p>
-        <p>
-            This is second P in DIV 
-        </p>
+        <h2>H2 After Span</h2>
+        <h5>
+             <p>
+                 DIV -> H5 -> P
+             </p>
+        </h5>
+        
 
     </div>
 </body>

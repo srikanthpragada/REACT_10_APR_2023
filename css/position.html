@@ -2,11 +2,12 @@
 <style>
     div {
         background-color: lightgray;
+        border-style:solid;
     }
  
     .second {
         left: 50px;
-        top: 50px;
+        top: 20px;
         position: fixed;
     }
 
@@ -18,8 +19,8 @@
 
     .b2 {
         position: absolute;
-        top: 60px;
-        left:150px;
+        top: 20px;
+        right:0px;
     }
     
 </style>
@@ -44,7 +45,10 @@
     </pre>
 
     <button>First</button>
-    <button class="b2">Second</button>
+    <div style="position:relative">
+      This is parent div.
+      <button class="b2">Second</button>
+    </div>  
 </body>
 
 </html>
