@@ -6,11 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Square</title>
     <script>
-        "use strict"
         function square() {
-            a = 10 
-            alert(a)
-            var num = document.getElementById("num").value;
+            var num = document.getElementById("txtNumber").value;
             var output = document.getElementById("output");
             output.innerHTML = parseInt(num) * parseInt(num);
         }
@@ -18,7 +15,7 @@
 </head>
 <body>
     <h1>Calculate Square</h1>
-    Number <input type="number" id="num" />
+    Number <input type="number" id="txtNumber" />
     <p></p>
     <button onclick="square()">Calculate</button>
     <h2 id="output"></h2>
