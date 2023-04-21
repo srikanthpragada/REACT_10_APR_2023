@@ -12,5 +12,10 @@ console.log("20,30,40".split(","))
 console.log(st.substring(4))
 console.log(st.length)
 
+console.log("abc".repeat(5))
+console.log("how are you".slice(0,5))
+console.log(" abc  xyz   ".trim() + "!")
+
+
 st[0] = 'j'
 console.log(st)
