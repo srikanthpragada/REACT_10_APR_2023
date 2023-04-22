@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack</title>
+    <script>
+        var stack = [] 
+        function pushValue() {
+            var txtValue = document.getElementById("txtValue");
+            stack.push( txtValue.value)
+            displayStack()
+        }
+
+        function popValue() {
+            var txtValue = document.getElementById("txtValue");
+            var entry = stack.pop()
+            txtValue.value = entry;
+            displayStack()
+        }
+
+        function displayStack() {
+           var entries = ""
+           for(let v of stack) {
+               entries += `<li>${v} </li>`
+           }
+           document.getElementById("output").innerHTML = entries
+        }
+    </script>
+</head>
+<body>
+    <h1>Stack</h1>
+    Value <input type="text" id="txtValue" />
+    <p></p>
+    <button onclick="pushValue()">Push</button>
+    <button onclick="popValue()">Pop</button>
+    <ul id="output"></ul>
+</body>
+</html> 

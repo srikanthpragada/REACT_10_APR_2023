@@ -2,7 +2,7 @@
 let d1 = new Date("2022-01-10")  // ISO format
 console.log(d1.toString())
 
-let d2 = new Date(2022, 0, 1)
+let d2 = new Date(2022, 0, 1)  // 2022 0 (Jan) 1 
 console.log(d2.toString()) 
 
 let cd = new Date();
