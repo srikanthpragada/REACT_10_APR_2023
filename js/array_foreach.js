@@ -1,10 +1,10 @@
 var a = [10, 20, 30, 11, 23, 40]
 
-// function print(v) {
-//     console.log(v * v)
-// }
+function printsquare(v) {
+    console.log(v * v)
+}
 
-// a.forEach(print)
+a.forEach(printsquare)
 
 // Using function expression 
 //a.forEach(function(v){ console.log(v)})
