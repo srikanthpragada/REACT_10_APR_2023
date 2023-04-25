@@ -7,6 +7,11 @@ class Product {
     sellingPrice() {
         return this.price * 1.08; // 8% tax 
     }
+
+    print() {
+        console.log(this.name)
+        console.log(this.price)
+    }
 }
 
 // Subclass 
@@ -21,6 +26,10 @@ class DiscountedProduct extends Product  {
         let before_tax = this.price - discount;
         let after_tax = before_tax * 1.08; // 8% tax
         return after_tax;
+    }
+    print() {
+        super.print() 
+        console.log(this.discountRate)
     }
 }
 
