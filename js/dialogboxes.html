@@ -13,13 +13,14 @@
 
         function takeConfirmation() {
             var result = window.confirm("Do you want to go???")
-            if (result)
+            if (result)  // ok selected 
                 alert('Yes!!!')
-            else
+            else         // cancel is selected 
                 alert("No....")
         }
 
         function takeName() {
+           // Prompt message and defaul value 
            var name =  prompt("Enter your name :", "Guest")
            alert("Hello " + name)
         }

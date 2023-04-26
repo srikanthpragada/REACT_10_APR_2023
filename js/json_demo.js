@@ -1,3 +1,4 @@
+// Javascript object 
 var c = {title : "React", price : 3000}
 
 var json = JSON.stringify(c)  // JS to JSON
