@@ -5,14 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Events</title>
+   
+</head>
+<body>
+    <h3 id="msg"></h3>
+    <button onclick="startProcess()">Start Process</button>
+    <button onclick="cancelProcess()">Cancel Process</button>
     <script>
         var id;  // global variable 
+        var msg = document.getElementById("msg")
         function startProcess() {
             //id = setTimeout( () => alert("Process Done"), 10000);
             id = setTimeout(process, 10000);
+            msg.innerText ="Process started!"
         }
         function process() {
             alert("Process Completed!")
+            msg.innerText ="";
         }
 
         function cancelProcess() {
@@ -22,9 +31,5 @@
             }
         }
     </script>
-</head>
-<body>
-    <button onclick="startProcess()">Start Process</button>
-    <button onclick="cancelProcess()">Cancel Process</button>
 </body>
 </html>

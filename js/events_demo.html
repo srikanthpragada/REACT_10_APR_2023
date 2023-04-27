@@ -7,19 +7,22 @@
     <script>
         function process(e) {
             console.log(e)
-            e.preventDefault()
+            
+        }
+        function show(e) {
+            console.log(e.value)
         }
     </script>
 </head>
 
 <body>
     <h1>Register</h1>
-    <form>
-        <input type="text" />
-        <p></p>
-        <button onclick="process(event)">process</button>
-    </form>
-    
+
+    <input type="text"  onblur="show(this)" />
+    <p></p>
+    <button onclick="process(event)">process</button>
+
+
 
 </body>
 
