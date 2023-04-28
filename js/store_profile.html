@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Profile</title>
+</head>
+
+<body>
+    <h1>Localstorage Demo</h1>
+    <button onclick="storeProfile()">Store Profile</button>
+    <button onclick="getProfile()">Get Profile</button>
+    <script>
+        function storeProfile() {
+            var profile = { name: "Andy", mobile: '39393333', email: 'andy@gmail.com' }
+            localStorage.setItem("profile", JSON.stringify(profile)); // JS to JSON
+        }
+
+        function getProfile() {
+            var data = localStorage.getItem("profile")
+            if (data == null) {
+                alert("Sorry! Profile not found!")
+                return;
+            }
+            var profile = JSON.parse(data)  // JSON String to JS
+            console.log(profile)
+            alert(`Name : ${profile.name}, Mobile : ${profile.mobile}, Email : ${profile.email}`)
+        }
+    </script>
+</body>
+
+</html>

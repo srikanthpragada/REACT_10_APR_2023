@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Watch</title>
+    
+</head>
+<body>
+    <h1 id="clock" style="font-size:2em"></h1>
+    <button onclick="startClock()">Start</button>
+    <button id="btnStop" onclick="stopClock()" disabled>Stop</button>
+    <button onclick="pauseOrResume(this)">Pause</button>
+
+    <script>
+        var id;
+        var value = 0;
+        var btnStop = document.getElementById("btnStop")
+        function startClock() {
+            value = 0
+            id =  setInterval(increment, 1000);
+            btnStop.disabled = false 
+        }
+
+        function increment() {
+            value ++;
+            document.getElementById("clock").innerHTML = value;
+        }
+
+        function stopClock() {
+            clearInterval(id);
+        }
+
+        function pauseOrResume(ele) {
+            var text = ele.innerText;
+            if (text === "Pause")
+            {
+               clearInterval(id);
+               ele.innerText = "Resume"
+            }
+            else
+            {
+                id =  setInterval(increment, 1000);
+                ele.innerText = "Pause"
+            }
+        }
+
+    </script>
+</body>
+</html>
