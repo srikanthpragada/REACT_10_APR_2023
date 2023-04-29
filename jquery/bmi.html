@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+       
+        function calculateBMI() {
+            var weight = parseFloat( $("#txtWeight").val());
+            var height = parseFloat( $("#txtHeight").val());
+            var bmi = weight / (height * height);
+            var msg = "Obesity";
+            if (bmi < 18.5)
+               msg = "Underweight";
+            else 
+              if(bmi < 25)
+                msg = "Normal Weight";
+              else
+                if(bmi < 30)
+                   msg = "Overweight";
+            
+            $("#output").text(`BMI : ${bmi}, Category: ${msg}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculate BMI</h1>
+    Weight (KG) <input type="number" id="txtWeight" />
+    <p></p>
+    Height (Mtrs) <input type="number" id="txtHeight" />
+    <p></p>
+    <button onclick="calculateBMI()">Calculate</button>
+    <h2 id="output"></h2>
+</body>
+</html> 

@@ -1,17 +1,21 @@
 <html>
-
 <head>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"> </script>
 </head>
 <script>
     // Document ready event 
     $(() => {
-        $("button").click(
-            (e) =>  {
+        $("button").click( (e) =>  {
               console.log(e)
               alert("You Clicked On " + e.target.innerText  + " Button!!")
             }
-       )
+       ) // click
+
+       $("button").mousemove( (e) =>  {
+              console.log(e.originalEvent.offsetX)
+           }
+       ) // mousemove
+
     });
 </script>
 
