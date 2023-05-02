@@ -2,14 +2,19 @@
 <script>
     function getTime() {
         // fetch api
-        fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata")
-            .then(showResult)
+        let p = fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkat")
+        console.log("Made a request")
+        p.then(showResult)
     }
 
     function showResult(response) {
-        console.log(response)
-        result = response.json() // returns promise 
-        result.then(data => console.log(data.datetime))
+        //console.log(response)
+        if(response.status === 200) {
+           promise = response.json() // returns promise 
+           promise.then(data => console.log(data.datetime))
+        }
+        else
+           alert("Sorry! Could not get details!")
     }
 </script>
 

@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Git User Info</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"> </script>
+</head>
+<script>
+    function getUserInfo() {
+        const userid = $("#txtUserId").val() 
+        const URL = `https://api.github.com/users/${userid}`
+        $.ajax(
+                {
+                    url: URL,
+                    type: 'get',   // http method 
+                    success: 
+                       (result) =>  
+                            $("#fullname").text(result.name),
+                    error: (errorObj) => {
+                        console.log(errorObj)
+                        alert("Sorry! Could not get user details!")
+                    }
+                }
+            );
+    }
+
+</script
+<body>
+    <h2>Github User Info</h2>
+    Userid : <input type="text" id="txtUserId" 
+                     value="srikanthpragada" />
+    <p></p>
+    <button onclick="getUserInfo()">Get Name</button>
+    <h3 id="fullname"></h1>
+</body>
+</html>

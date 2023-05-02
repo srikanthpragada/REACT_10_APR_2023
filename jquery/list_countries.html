@@ -24,7 +24,7 @@
         var tableBody = $("#countriesTable")
         var rows = ""
         countries.forEach((country) => {
-            var capital = country.capital ? country.capital[0] : 'Unknown'
+            var capital = country.capital ? country.capital[0] : 'No Capital'
             rows += `<tr><td>${country.name.common}</td><td>${capital}</td>` +
                 `<td><img src='${country.flags.png}' class="flag"/></td></tr>`
         })
