@@ -1,8 +1,7 @@
 
 // Function component 
-
-function Hello() {
+export default function Hello() {
     let msg = "Hello!!!"
     return <h2>{msg}</h2>;
 }
-export default Hello;
+ 
