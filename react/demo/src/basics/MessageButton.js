@@ -2,7 +2,7 @@ import React from 'react'
 
 // Working with properties 
 export default function MessageButton(props) {
-
+   
   function showMessage() {
       alert(props.message)
   }
