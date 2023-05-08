@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import CounterClass from './state/CounterClass';
+import Passengers2 from './state/Passengers2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <CounterClass />
+     <Passengers2 />
   </React.StrictMode>
 );
 
