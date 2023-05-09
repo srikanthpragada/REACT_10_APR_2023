@@ -2,28 +2,69 @@ import React, { useState } from 'react'
 
 // Component to add Passenger 
 function AddPassenger({ addPassenger }) {
-    function addNewPassenger() {
-        let name = document.getElementById("txtName").value;
-        let age = document.getElementById("txtAge").value;
+    let [passenger, setPassenger] = useState( { name : 'Srikanth', age : '30'})
+
+    function addNewPassenger(e) {
+        // Prevent default action (reloading the page)
+        e.preventDefault();
+
+        if ( passenger.name.trim().length === 0)
+        {
+            alert("Sorry! Invalid Name. Please enter valid name!");
+            return;
+        }
+
         // call a function in parent through property 
-        addPassenger({ name: name, age: age })
+        addPassenger(passenger)
+    }
+
+    // function updateName(e) {
+    //     setPassenger( { ...passenger, name : e.target.value})
+    // }
+
+    // function updateAge(e) {
+    //     setPassenger( { ...passenger, age : e.target.value})
+    // }
+
+    function updateProperty(e) {
+        let name = e.target.name     // name of the element/field
+        let value = e.target.value  // value of the field 
+
+        // update property whose name is in name variable 
+        setPassenger( {...passenger, [name] : value })
     }
 
     return (
         <>
             <h2>Passengers</h2>
-            Name : <input type="text" id="txtName" />
-            Age :  <input type="number" id="txtAge" />
-            <button onClick={addNewPassenger}>Add</button>
+            <form onSubmit={addNewPassenger}>
+                Name : <input type="text" name="name"
+                              value={passenger.name}
+                              onChange={updateProperty}
+                              required pattern='[a-zA-Z ]+'/>
+                Age :  <input type="number" name="age"
+                              value = {passenger.age}
+                              onChange={updateProperty}
+                              min="12" max="115"  required />
+                <button>Add</button>
+            </form>
         </>
     )
 
 }
 
-function ListPassengers({ passengers, deleteFunc }) {
+function ListPassengers({ passengers, deleteFunc, clearAllFunc }) {
     function deletePassengerByIdx(idx) {
-        // call a function in parent through property 
-        deleteFunc(idx)
+        // take confirmation 
+        if (window.confirm("Do you want to delete passenger?")) {
+            // call a function in parent through property 
+            deleteFunc(idx)
+        }
+    }
+
+    function clearAll() {
+        if (window.confirm('Do you want to delete all passengers information?'))
+             clearAllFunc();
     }
 
     return (
@@ -49,7 +90,8 @@ function ListPassengers({ passengers, deleteFunc }) {
                     }
                 </tbody>
             </table>
-
+            <p></p>
+            <button onClick={clearAll}>Clear All</button>
         </>
     )
 }
@@ -59,7 +101,12 @@ export default function Passengers() {
 
     function addPassenger(newPassenger) {
         // add new passenger to passengers collection
-        setPassengers([...passengers, newPassenger])
+        // check whether name is already present 
+        let found = passengers.find((p, idx) => p.name === newPassenger.name);
+        if (!found)
+            setPassengers([...passengers, newPassenger])
+        else
+            alert("Sorry! Duplicate passenger name!")
     }
 
     function deletePassenger(idxToDelete) {
@@ -68,12 +115,22 @@ export default function Passengers() {
         setPassengers([...newPassengers])
     }
 
+    function clearAll() {
+        setPassengers([]);
+    }
+
     return (
         <>
             <AddPassenger addPassenger={addPassenger} />
             <p></p>
-            {passengers.length > 0 ?
-                <ListPassengers passengers={passengers} deleteFunc={deletePassenger} />
+            
+            {
+               // Conditional rendering
+               passengers.length > 0 ?
+                <ListPassengers passengers={passengers}
+                    deleteFunc={deletePassenger}
+                    clearAllFunc={clearAll}
+                />
                 : <h5>No passengers</h5>
             }
         </>
