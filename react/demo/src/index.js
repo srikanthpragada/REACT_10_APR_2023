@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Passengers2 from './state/Passengers2';
+import PropsDrilling from './context/PropsDrilling';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <Passengers2 />
+     <PropsDrilling />
   </React.StrictMode>
 );
 

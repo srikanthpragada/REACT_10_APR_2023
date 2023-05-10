@@ -8,7 +8,7 @@ function AddPassenger({ addPassenger }) {
         // Prevent default action (reloading the page)
         e.preventDefault();
 
-        if ( passenger.name.trim().length === 0)
+        if (passenger.name.trim().length === 0)
         {
             alert("Sorry! Invalid Name. Please enter valid name!");
             return;
@@ -96,7 +96,7 @@ function ListPassengers({ passengers, deleteFunc, clearAllFunc }) {
     )
 }
 
-export default function Passengers() {
+export default function Passengers2() {
     let [passengers, setPassengers] = useState([])
 
     function addPassenger(newPassenger) {
