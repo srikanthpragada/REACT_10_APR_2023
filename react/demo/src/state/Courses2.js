@@ -1,12 +1,25 @@
 import React, { useState } from 'react'
-export default function Courses() {
+
+
+export default function Courses2() {
+    let coursesData = [
+           {name : 'Python', fee : 10000},
+           {name : 'Java', fee : 15000},
+           {name : 'AWS', fee : 5000},
+           {name : 'React', fee : 4000}
+        ] 
+
     let [courses, setCourses] = useState([])
+    let [index, setIndex] = useState([])
+
+    function updateIndex(e) {
+        // get selected index 
+        console.log(e.target.selectedIndex)
+        setIndex(e.target.selectedIndex)
+    }
 
     function addCourse() {
-        let coursesList = document.getElementById("ddlCourses")
-        let index = coursesList.selectedIndex
-        let option = coursesList.options[index];
-        let course = { name: option.text, fee: option.value }
+        let course = coursesData[index]; // take selected course
         setCourses([...courses, course])
     }
 
@@ -23,10 +36,12 @@ export default function Courses() {
             <h2>Courses</h2>
             <p></p>
             Select Course:
-            <select id="ddlCourses">
-                <option value="10000">Java</option>
-                <option value="8000">Python</option>
-                <option value="5000">Aws</option>
+            <select onChange={updateIndex}>
+                {
+                 coursesData.map( (c, idx) =>
+                    <option key={idx} value={c.fee}>{c.name}</option>
+                 )
+                }
             </select>
             &nbsp;
             < button onClick={addCourse}>Add</button>
