@@ -29,16 +29,19 @@ export default function AddCourse() {
             <h1>Add Course</h1>
             <form onSubmit={addCourse}>
                 Title <br />
-                <input type="text" name="title" value={course.title}
+                <input type="text" name="title" 
+                                   value={course.title}
                                    onChange={changeValue} required />
                 <p></p>
                 Trainer <br />
-                <input type="text" name="trainer" value={course.trainer}
-                 onChange={changeValue} required />
+                <input type="text" name="trainer" 
+                                   value={course.trainer}
+                                   onChange={changeValue} required />
                 <p></p>
                 Price <br />
-                <input type="text" name="price" value={course.price} 
-                onChange={changeValue} required />
+                <input type="text" name="price" 
+                                   value={course.price} 
+                                   onChange={changeValue} required />
                 <p></p>
                 <button>Submit</button>
             </form>

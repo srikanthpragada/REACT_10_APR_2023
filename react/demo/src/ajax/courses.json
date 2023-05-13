@@ -37,12 +37,6 @@
       "id": 6
     },
     {
-      "title": "JPA + Spring",
-      "trainer": "Dan",
-      "price": "10000",
-      "id": 7
-    },
-    {
       "title": "C Programming",
       "trainer": "Jeff",
       "price": "5000",
@@ -57,8 +51,12 @@
     {
       "title": "Spring Boot",
       "trainer": "Srikanth",
-      "price": "3000",
+      "price": "10000",
       "id": 10
     }
+  ],
+  "resources" :[
+     { "url" : "", "description" : ""},
+     { "url" : "", "description" : ""}
   ]
 }
