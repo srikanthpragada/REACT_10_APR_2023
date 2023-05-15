@@ -13,7 +13,7 @@ export default function BookDetails() {
                 setBook(book)
             }
         ) // get 
-    }, [bookId])
+    }, [bookId])  // execute this whenever bookId is modified 
     
     return (
         <>

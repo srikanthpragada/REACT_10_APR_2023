@@ -4,7 +4,7 @@
       "id": 2,
       "title": "Long walk to freedom",
       "author": "Nelson Mandela",
-      "price": "400"
+      "price": "500"
     },
     {
       "title": "Promised Land",
@@ -27,7 +27,7 @@
     {
       "title": "You can win ",
       "author": "Shiv khera",
-      "price": "300",
+      "price": "400",
       "id": 8
     },
     {
@@ -38,8 +38,8 @@
     },
     {
       "title": "No Rules Rules",
-      "author": "Hasting",
-      "price": "600",
+      "author": "Gary Hasting",
+      "price": "550",
       "id": 10
     },
     {
@@ -49,9 +49,9 @@
       "id": 11
     },
     {
-      "title": "slfjsfj",
-      "author": "lksjflsjfdlsjf",
-      "price": "322",
+      "title": "That will never work",
+      "author": "Hastings",
+      "price": "550",
       "id": 12
     }
   ],

@@ -25,7 +25,7 @@ export default function ListBooks() {
                 method: 'delete',
                 success: function () {
                     alert("Book deleted successfully!")
-                    // remove book to be deleted from books array
+                    // remove book deleted from books array
                     var newBooks = books.filter( (b) => b.id !== id)
                     setBooks ( [...newBooks]);
                     //getBooks();

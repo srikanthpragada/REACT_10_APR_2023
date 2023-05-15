@@ -14,7 +14,7 @@ export default function AddBook() {
     $.ajax(
       {
         url: BOOKS_URL,
-        method: 'post',
+        method: 'post',  // add new book
         data: book,
         success: function () {
           alert("Book added successfully!")
@@ -38,7 +38,6 @@ export default function AddBook() {
   function cancelAdd(e) {
     e.preventDefault()
     navigate("/list")  // Programmatic Navigation
-
   }
 
 

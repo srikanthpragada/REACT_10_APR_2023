@@ -5,7 +5,7 @@ import { BOOKS_URL } from './constants';
 import { useNavigate } from 'react-router-dom'
 
 export default function EditBook() {
-    let { bookId } = useParams();
+    let { bookId } = useParams();  // take route param bookId
     const [book, setBook] = useState({ title : "", author : "", price : ""})
     let navigate = useNavigate()
 
@@ -55,15 +55,18 @@ export default function EditBook() {
             <h2>Edit Book</h2>
             <form onSubmit={updateBook}>
                 Title <br />
-                <input type="text" value={book.title} required onChange={changeValue} name="title" />
+                <input type="text" value={book.title} required 
+                      onChange={changeValue} name="title" />
                 <p></p>
 
                 Author <br />
-                <input type="text" value={book.author} required onChange={changeValue} name="author" />
+                <input type="text" value={book.author} required 
+                      onChange={changeValue} name="author" />
                 <p></p>
 
                 Price <br />
-                <input type="number" value={book.price} onChange={changeValue} name="price" />
+                <input type="number" value={book.price} 
+                       onChange={changeValue} name="price" />
                 <p></p>
                 <button>Update Book</button>
                 &nbsp;
